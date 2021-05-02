@@ -14,7 +14,7 @@ const CategoriaSchema = Schema({
     usuario: {
         //type: Schema.Types.ObjectId,
         type: String,
-        //c ref: 'Usuario',
+        // ref: 'Usuario',
         required: true
     }
 

@@ -22,8 +22,16 @@ const usuariosPost = async(req = request, res = response) => {
         })
     }
 
-    const { nombre, correo, password, estado } = req.body;
-    const usuario = new Usuario({ nombre, correo, password, estado });
+    const { nombre, correo, password, estado, rol } = req.body;
+    const usuario = new Usuario({ nombre, correo, password, estado, rol });
+    /* const { role } = Usuario({ rol });
+     if (role != 'ADMIN_ROLE' || 'USER_ROLE') {
+         return res.status(400).json({
+             msg: 'Rol no valido',
+         })
+
+
+     }*/
 
     const salt = bcrypt.genSaltSync();
     usuario.password = bcrypt.hashSync(password, salt);

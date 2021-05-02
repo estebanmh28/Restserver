@@ -13,7 +13,7 @@ const ProductoSchema = Schema({
     usuario: {
         type: String,
         //type: Schema.Types.ObjectId,
-        //  ref: 'Usuario',
+        //ref: 'Usuario',
         required: true
 
     },
@@ -24,8 +24,8 @@ const ProductoSchema = Schema({
     },
     categoria: {
         type: String,
-        //type: Schema.Types.ObjectId,
-        //ref: 'Categoria',
+        //  type: Schema.Types.ObjectId,
+        // ref: 'Categoria',
         required: true
     },
     descripcion: {
