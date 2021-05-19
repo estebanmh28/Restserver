@@ -3,6 +3,7 @@ const Producto = require('../models/producto');
 
 const { check, validationResult } = require('express-validator');
 
+
 const ProductoGet = async(req = request, res = response) => {
     const producto = await Producto.find();
     res.json({

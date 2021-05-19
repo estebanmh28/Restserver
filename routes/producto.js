@@ -13,7 +13,7 @@ const { validarRol } = require('../middlewares/validar-rol');
 
 const router = Router();
 
-router.get('/', validarJWT, ProductoGet);
+router.get('/:id', validarJWT, ProductoGet);
 
 router.post('/', validarJWT, ProductoPost);
 

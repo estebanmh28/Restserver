@@ -4,7 +4,10 @@ const Categoria = require('../models/categoria');
 const { check, validationResult } = require('express-validator');
 
 const CategoriaGet = async(req = request, res = response) => {
-    const categoria = await Categoria.find();
+
+
+    const id = req.params.id;
+    const categoria = await Categoria.findByIdAndUpdate(id);
     res.json({
         msg: 'API - GET - CATEGORIA',
         categoria,

@@ -43,6 +43,17 @@ const usuariosPost = async(req = request, res = response) => {
             msg: 'Usuario ya existe en la base de datos',
         });
     }
+    //ValidaRol
+    const token = req.header('x-token');
+    const rolValidar = await Usuario.findOne(token, { rol });
+    if (rolValidar != 'ADMIN_ROLE') {
+        return res.status(400).json({
+            msg: 'Rol no valido para crear usuarios'
+        });
+    }
+
+
+
 
     usuario.save();
     res.json({
